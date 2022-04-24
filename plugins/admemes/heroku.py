@@ -91,6 +91,8 @@ Heroku Account Status
     await message.reply_text(
         "𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝘀𝘁𝗮𝘁𝘂𝘀 𝗼𝗳 𝘆𝗼𝘂𝗿 𝗕𝗼𝘁\n\n"
         "DB Status\n"
+        f" USED  :  {used} / {total}\n" 
+        f" FREE  :  {free}\n\n"
         f"➪ 𝖡𝗈𝗍 𝖴𝗉𝗍𝗂𝗆𝖾: {uptime}\n"
         f"{quota_details}"
         f"{disk}",
