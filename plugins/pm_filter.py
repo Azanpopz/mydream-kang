@@ -503,8 +503,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await query.answer('Check Out The Chat',)
-            await asyncio.sleep(300)
+            await query.answer('📥𝔻𝕆𝕎ℕ𝕃𝕆𝔸𝔻📥',)
+            await asyncio.sleep(180)
             await msg1.delete()
             await msg.delete()
             del msg1, msg
@@ -1149,7 +1149,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
   
-
+    await query.answer('𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠......⌛️⏳️⌛️',)
     await message.reply_chat_action("Typing")
     m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
     await asyncio.sleep(2)
@@ -1220,7 +1220,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(600)
+    await asyncio.sleep(180)
     await fmsg.delete()
     await message.reply_text(text=f"⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
 
