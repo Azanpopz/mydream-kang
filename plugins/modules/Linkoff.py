@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 
 
 
-@Client.on_message(filters.regex("Mair") | filters.regex("www") | filters.regex("@") | filters.regex("/start@minnal_murali_robot") | filters.regex("poor"))
+@Client.on_message(filters.regex("Mair") | filters.regex("www") | filters.regex("@") | filters.regex("/start@minnal_murali_robot") | filters.regex("@") | filters.regex("/start@MINNAL_MURALI_ROBOT") | filters.regex("poor"))
 async def nolink(bot,message):
 	try:
 		await message.delete()
