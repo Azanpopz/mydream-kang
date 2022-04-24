@@ -1,22 +1,22 @@
-# (c) @KoshikKumar17
+#Made By @Don_Sflix
+
 import os
 import math
-import json
 import time
-import shutil
 import heroku3
 import requests
-from pyrogram import filters
-from pyrogram import Client as Koshik
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from info import HEROKU_API_KEY, 
-from utils import humanbytes
 
-BT_STRT_TM = time.time()
+from pyrogram import Client, filters
+from database.users_chats_db import db
 
-@Client.on_message((filters.private | filters.group) & filters.command('botstatus'))
-async def bot_dyno_status(client,message):
-    px = await message.reply_text("**Fetching Bot Status...✨**")
+#=====================================================
+BOT_START_TIME = time.time()
+
+HEROKU_API_KEY = (os.environ.get("HEROKU_API_KEY", ""))
+#=====================================================
+
+@Client.on_message(filters.command('status'))
+async def bot_status(client,message):
     if HEROKU_API_KEY:
         try:
             server = heroku3.from_key(HEROKU_API_KEY)
@@ -55,26 +55,45 @@ async def bot_dyno_status(client,message):
                 leftperc = math.floor(quota_left / total_quota * 100)
 
                 quota_details = f"""
-**Heroku Account Status**
-> __You have **{total} hours** of free dyno quota available each month.😉__
-> __Dyno hours used this month__ ;
-        - **{used} hours🙃**  ( {usedperc}% )
-> __Dyno hours remaining this month__ ;
-        - **{hours} hours😁**  ( {leftperc}% )
-        - **Approximately {days} days!🥳🥳**
-"""
+
+Heroku Account Status
+
+➪ 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 {total} 𝗁𝗈𝗎𝗋𝗌 𝗈𝖿 𝖿𝗋𝖾𝖾 𝖽𝗒𝗇𝗈 𝗊𝗎𝗈𝗍𝖺 𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖾𝖺𝖼𝗁 𝗆𝗈𝗇𝗍𝗁.
+
+➪ 𝖣𝗒𝗇𝗈 𝗁𝗈𝗎𝗋𝗌 𝗎𝗌𝖾𝖽 𝗍𝗁𝗂𝗌 𝗆𝗈𝗇𝗍𝗁:
+        • {used} 𝖧𝗈𝗎𝗋𝗌 ( {usedperc}% )
+
+➪ 𝖣𝗒𝗇𝗈 𝗁𝗈𝗎𝗋𝗌 𝗋𝖾𝗆𝖺𝗂𝗇𝗂𝗇𝗀 𝗍𝗁𝗂𝗌 𝗆𝗈𝗇𝗍𝗁:
+        • {hours} 𝖧𝗈𝗎𝗋𝗌 ( {leftperc}% )
+        • Approximately {days} days!"""
             else:
                 quota_details = ""
         except:
-            print("`Check your Heroku API key...`")
+            print("Check your Heroku API key")
             quota_details = ""
     else:
         quota_details = ""
 
-    uptime = time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - BT_STRT_TM))
+    uptime = time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - BOT_START_TIME))
 
-    await px.edit_text(
-        "**🙇🏻‍♂️ Current status of This Bot! 🙇🏻‍♂️**\n\n"
-        f"> __BOT Uptime__ : **{uptime}**\nBot was restarted **{uptime}** ago..\n\n"
+    try:
+        t, u, f = shutil.disk_usage(".")
+        total = humanbytes(t)
+        used = humanbytes(u)
+        free = humanbytes(f)
+
+        disk = "\n**Disk Details**\n\n" \
+            f"> USED  :  {used} / {total}\n" \
+            f"> FREE  :  {free}\n\n"
+    except:
+        disk = ""
+
+    await message.reply_text(
+        "𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝘀𝘁𝗮𝘁𝘂𝘀 𝗼𝗳 𝘆𝗼𝘂𝗿 𝗕𝗼𝘁\n\n"
+        "DB Status\n"
+        f"➪ 𝖡𝗈𝗍 𝖴𝗉𝗍𝗂𝗆𝖾: {uptime}\n"
         f"{quota_details}"
+        f"{disk}",
+        quote=True,
+        parse_mode="md"
     )
