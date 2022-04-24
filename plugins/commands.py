@@ -491,6 +491,7 @@ async def settings(client, message):
                     '✅ Yes' if settings["spell_check"] else '❌ No',
                     callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
                 ),
+            ],
             [
                 InlineKeyboardButton(
                     'Filter',
