@@ -1149,7 +1149,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
   
-    await query.answer('𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠......⌛️⏳️⌛️',)
+    
     await message.reply_chat_action("Typing")
     m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
     await asyncio.sleep(2)
