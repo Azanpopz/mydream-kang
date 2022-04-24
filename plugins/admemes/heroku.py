@@ -9,10 +9,12 @@ import requests
 from pyrogram import filters
 from pyrogram import Client as Koshik
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from info import HEROKU_API_KEY, BT_STRT_TM
+from info import HEROKU_API_KEY, 
 from utils import humanbytes
 
-@Koshik.on_message((filters.private | filters.group) & filters.command('botstatus'))
+BT_STRT_TM = time.time()
+
+@Client.on_message((filters.private | filters.group) & filters.command('botstatus'))
 async def bot_dyno_status(client,message):
     px = await message.reply_text("**Fetching Bot Status...✨**")
     if HEROKU_API_KEY:
