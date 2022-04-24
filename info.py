@@ -50,6 +50,15 @@ DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Rajappan")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#My Own by @KoshikKumar17
+COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", ".")
+#For heroku dyno status
+HEROKU_API_KEY = environ.get("HEROKU_API_KEY", "")
+HEROKU_APP_NAME = environ.get("HEROKU_AP_NAME", "")
+BT_STRT_TM = time.time()
+
+
+
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamEvamaria')
