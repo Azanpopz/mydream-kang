@@ -55,7 +55,7 @@ COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", ".")
 #For heroku dyno status
 HEROKU_API_KEY = environ.get("HEROKU_API_KEY", "")
 HEROKU_APP_NAME = environ.get("HEROKU_AP_NAME", "")
-BT_STRT_TM = time.time()
+
 
 
 
