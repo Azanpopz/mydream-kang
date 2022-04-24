@@ -148,6 +148,10 @@ pyshorteners
 
 play-scraper
 dnspython
+pyrogram
+tgcrypto
+
+python-decouple
 
 
 
