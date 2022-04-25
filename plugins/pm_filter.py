@@ -1312,7 +1312,7 @@ async def advantage_spell_chok(msg):
             ]
     )
    
-    k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+    k = await msg.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
