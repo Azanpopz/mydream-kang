@@ -1069,7 +1069,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'infos':
         await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
     elif query.data == 'infoss':
-        await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
+        await query.answer("FILES FORWARD TO YOUR SAVED MESSAGES. All files here Gets Deleted With in 5 Minutes", True)
     elif query.data == 'im':
         await query.message.reply_chat_action("Typing")
         m=await query.message.reply_sticker(
