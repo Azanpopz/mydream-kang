@@ -1311,13 +1311,10 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(f'sᴇʀɪᴇs', 'series')
             ]
     )
-   
     
-    
-            k = await msg.reply_text
-            text=f"check your movie",
-            reply_markup=InlineKeyboardMarkup(btn))
-        
+    k = await msg.reply_text(
+        text= "CHECK YOUR MOVIE",
+        reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
     return k
