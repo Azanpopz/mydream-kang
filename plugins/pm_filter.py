@@ -1071,8 +1071,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'infoss':
         await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
     elif query.data == 'im':
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await query.message.reply_chat_action("Typing")
+        m=await query.message.reply("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
         await asyncio.sleep(2)
         await m.delete()
 
