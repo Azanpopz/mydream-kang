@@ -1332,8 +1332,8 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(f'sᴇʀɪᴇs', 'series')
             ]
     )
-    await message.reply_chat_action("Typing")
-    m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+    await msg.reply_chat_action("Typing")
+    m=await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
     await asyncio.sleep(2)
     await m.delete()
 
