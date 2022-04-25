@@ -1338,12 +1338,17 @@ async def advantage_spell_chok(msg):
         caption=f"<b>📍നിങ്ങളുടെ സിനിമ ഇതിലുണ്ടോന്ന് പരിശോധിക്കുക</b>",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(btn))
-        
-        
-    
+                  
     await asyncio.sleep(60)
     await k.delete()
+
+    await message.reply_chat_action("Typing")
+    m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+    await asyncio.sleep(2)
+    await m.delete()
     return k
+    
+    
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
