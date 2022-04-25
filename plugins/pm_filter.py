@@ -1312,8 +1312,8 @@ async def advantage_spell_chok(msg):
             ]
     )
    
-    k = await msg.reply_sticker(
-        sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
+    k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                      
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
