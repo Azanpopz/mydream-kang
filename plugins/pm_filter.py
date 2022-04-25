@@ -1317,12 +1317,12 @@ async def advantage_spell_chok(msg):
     except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            k = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            k = await msg.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            k = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            k = await msg.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        k = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        k = await msg.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
     await asyncio.sleep(60)
     await k.delete()
