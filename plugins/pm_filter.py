@@ -1070,6 +1070,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
     elif query.data == 'infoss':
         await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
+    elif query.data == 'im':
+        await query.message.edit_text(
+            text="▣▢▢▢▢▢"
+        )
+
+
     elif query.data == 'imdb':
         await query.answer("{search}", True)
     
@@ -1306,7 +1312,7 @@ async def advantage_spell_chok(msg):
         )
     btn.insert(0,
             [
-                InlineKeyboardButton(f'ɪɴғᴏ', 'infos'),
+                InlineKeyboardButton(f'ɪɴғᴏ', 'im'),
                 InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movies'),
                 InlineKeyboardButton(f'sᴇʀɪᴇs', 'series')
             ]
