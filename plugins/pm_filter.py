@@ -158,7 +158,7 @@ async def next_page(bot, query):
 
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
-async def advantage_spoll_choker(bot, query.message):
+async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer("Not For You", show_alert=True)
@@ -196,8 +196,8 @@ async def advantage_spoll_choker(bot, query.message):
             text="▣▣▣▣▣▣"
         )
             k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.@nasrani_update_join @munnipopz')
-        await asyncio.sleep(10000)
-        await k.delete()
+        await asyncio.sleep()
+        
 
 
 @Client.on_callback_query()
@@ -1312,8 +1312,23 @@ async def advantage_spell_chok(msg):
             ]
     )
     
-    k = await msg.reply_text(
-        text= "CHECK YOUR MOVIE",
+    k = await msg.reply_video(
+        video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
+        caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
+        parse_mode="html",
+        reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                            ],
+                            [
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
+                        ]
+                    )
+                )         
+        
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
