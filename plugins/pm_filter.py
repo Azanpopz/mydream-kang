@@ -1072,7 +1072,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
     elif query.data == 'im':
         await query.message.reply_chat_action("Typing")
-        m=await query.message.reply("😂😂",
+        m=await query.message.reply_sticker("😂😂",
         sticker="CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
