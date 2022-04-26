@@ -176,7 +176,7 @@ Pymoe
 pendulum
 pytesseract
 pyshorteners
-persondoesnotexist
+
 catdoesnotexist
 python-decouple
 speedtest-cli
